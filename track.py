@@ -72,6 +72,6 @@ class LaneTracker:
                     int(state[i]), int(state[i + 2]),
                     int(state[i + 4]), int(state[i + 6])
                 ))
-            #return lanes
+            return lanes
         else:
             return None

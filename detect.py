@@ -1,4 +1,5 @@
 from __future__ import division
+import time
 import cv2
 import numpy as np
 class LaneDetector:

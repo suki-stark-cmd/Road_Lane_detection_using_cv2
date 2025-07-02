@@ -1,9 +1,7 @@
 from __future__ import division
-
+import time
 import cv2
 import numpy as np
-
-
 class LaneDetector:
     def __init__(self, road_horizon, prob_hough=True):
         self.prob_hough = prob_hough

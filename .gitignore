@@ -57,8 +57,4 @@ coverage.xml
 Thumbs.db
 Desktop.ini
 
-# Video files
-*.mp4
-*.avi
-*.mov
-*.mkv
+

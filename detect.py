@@ -8,7 +8,6 @@ class LaneDetector:
         self.vote = 50
         self.roi_theta = 0.3
         self.road_horizon = road_horizon
-
     @staticmethod
     def _standard_hough(img, init_vote):
         """Hough transform wrapper to return a list of points like PHough does
@@ -28,12 +27,8 @@ class LaneDetector:
                     y2 = int(y0 - 1000*a)
                     points[0].append((x1, y1, x2, y2))
         return points
-
     @staticmethod
     def _base_distance(x1, y1, x2, y2, width):
-        """Compute the point where the give line crosses the base of the frame
-        and return distance of that point from center of the frame
-        """
         if x2 == x1:
             return (width*0.5) - x1
         m = (y2-y1)/(x2-x1)
@@ -42,8 +37,6 @@ class LaneDetector:
         return (width*0.5) - base_cross
 
     def _scale_line(self, x1, y1, x2, y2, frame_height):
-        """Scale the farthest point of the segment to be on the drawing horizon
-        """
         if x1 == x2:
             if y1 < y2:
                 y1 = self.road_horizon
